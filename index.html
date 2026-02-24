@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application Tracker</title>
 
-    <!-- DaisyUI + Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <style>
         body {
@@ -20,7 +18,6 @@
 
 <body class="bg-[#f8fafc] container mx-auto p-5">
 
-<!-- Header / Dashboard -->
 <header>
     <h1 class="text-3xl font-bold mb-4">Job Application Tracker</h1>
 
@@ -44,11 +41,9 @@
 
 <hr class="my-6">
 
-<!-- Main Section -->
 <main>
     <h2 class="text-2xl font-bold mb-4">Available Jobs</h2>
 
-    <!-- Filter Buttons -->
     <div class="mb-6 space-x-2">
         <button id="all-filter-btn" onclick="toggleStyle('all-filter-btn')" 
             class="bg-black text-white px-5 py-2">All</button>
@@ -60,13 +55,10 @@
                 class="bg-gray-300 text-black px-5 py-2">Rejected</button>
     </div>
 
-    <!-- Filtered Section -->
     <section id="filtered-section" class="hidden"></section>
 
-    <!-- Job Cards Section -->
     <section id="allCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-        <!-- Example Card Template -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">Mobile First Corp</h3>
@@ -81,13 +73,11 @@
                 </div>
             </div>
 
-            <!-- Delete Button -->
             <div>
                 <button class="delete-btn rounded-[50%] btn">🗑</button>
             </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">WebFlow Agency</h3>
@@ -106,7 +96,6 @@
             </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">DataViz Solutions</h3>
@@ -125,7 +114,6 @@
             </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">CloudFirst Inc</h3>
@@ -144,7 +132,6 @@
             </div>
         </div>
 
-        <!-- Card 5 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">Innovation Labs</h3>
@@ -163,7 +150,6 @@
             </div>
         </div>
 
-        <!-- Card 6 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">MegaCorp Solutions</h3>
@@ -182,7 +168,6 @@
             </div>
         </div>
 
-        <!-- Card 7 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">StartupXYZ</h3>
@@ -201,7 +186,6 @@
             </div>
         </div>
 
-        <!-- Card 8 -->
         <div class="bg-white p-5 shadow rounded flex justify-between">
             <div class="jobCard">
                 <h3 class="font-bold text-lg">TechCorp Industries</h3>
@@ -223,7 +207,6 @@
     </section>
 </main>
 
-<!-- JS file -->
 <script src="./script.js"></script>
 
 </body>

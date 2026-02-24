@@ -1,23 +1,23 @@
-//  Data Lists
+
 let interviewList = [];
 let rejectedList = [];
 
-//  Dashboard Elements 
+
 const totalEl = document.getElementById('total');
 const interviewCountEl = document.getElementById('interviewCount');
 const rejectedCountEl = document.getElementById('rejectedCount');
 
-// Filter Buttons 
+
 const allFilterBtn = document.getElementById('all-filter-btn');
 const interviewFilterBtn = document.getElementById('interview-filter-btn');
 const rejectedFilterBtn = document.getElementById('rejected-filter-btn');
 
-//  Sections 
+
 const allCardsSection = document.getElementById('allCards');
 const filterSection = document.getElementById('filtered-section');
 const mainContainer = document.querySelector('main');
 
-//  Initial Count 
+
 function calculateCount() {
     totalEl.innerText = allCardsSection.children.length;
     interviewCountEl.innerText = interviewList.length;
@@ -25,7 +25,7 @@ function calculateCount() {
 }
 calculateCount();
 
-//Toggle Tabs
+
 function toggleStyle(id) {
     const buttons = [allFilterBtn, interviewFilterBtn, rejectedFilterBtn];
     buttons.forEach(btn => {
@@ -51,12 +51,14 @@ function toggleStyle(id) {
     }
 }
 
-//  Render Filtered Cards 
 function renderFiltered(list,type){
     filterSection.innerHTML='';
     if(list.length===0){
-        filterSection.innerHTML=`<div class="text-center p-10 text-gray-500">
-        <h3 class="text-xl font-bold">No ${type} Jobs</h3></div>`;
+        filterSection.innerHTML=`<div class="text-center p-10 text-gray-500" style="display: flex;justify-content: center;align-content: center;align-items: center;flex-direction: column;">
+        <img class="text-center" src="./jobs.png">
+        <h3 class="text-xl font-bold">No ${type} Jobs</h3>
+        <p style="color:gray">Check back soon for new job opportunities</p>
+        </div>`;
         return;
     }
     list.forEach(job=>{
@@ -79,10 +81,8 @@ function renderFiltered(list,type){
     });
 }
 
-// Main Container Click Event 
 mainContainer.addEventListener('click',function(e){
 
-    // Delete Button
     if(e.target.closest('.delete-btn')){
         const btn = e.target.closest('.delete-btn');
         const parentCard = btn.closest('.bg-white');
@@ -104,7 +104,6 @@ mainContainer.addEventListener('click',function(e){
         return;
     }
 
-    //  Status Buttons 
     const card = e.target.closest('.jobCard');
     if(!card) return;
 
@@ -114,7 +113,6 @@ mainContainer.addEventListener('click',function(e){
     const description = card.querySelectorAll('.text-gray-500')[1]?.innerText || '';
     const jobData = {company,position,details,description};
 
-    // Interview
     if(e.target.classList.contains('interview')){
         const statusBtn=card.querySelector('.status-text');
         statusBtn.innerText='Interview';
@@ -126,7 +124,6 @@ mainContainer.addEventListener('click',function(e){
         calculateCount();
     }
 
-    // Rejected
     if(e.target.classList.contains('rejected')){
         const statusBtn=card.querySelector('.status-text');
         statusBtn.innerText='Rejected';
